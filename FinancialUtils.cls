@@ -102,9 +102,10 @@ public with sharing class FinancialUtils {
      * @param nper 
      * @param pv 
      * @param fv 
-     * @param type 
+     * @param type
      * @return  `Double`
      */
+    public static Double pmt(Double rate, Integer nper, Decimal pv){return pmt(rate, nper, Double.valueOf(pv), 0.0d, 0);}
     public static Double pmt(Double rate, Integer nper, Double pv, Double fv, Integer type) {
         Double pmt = rate / (Math.pow(1 + rate, nper) - 1) * -(pv * Math.pow(1 + rate, nper) + fv);
 
